@@ -20,4 +20,7 @@ while exit_option != 'x':
         result = num1 * num2
         print(result)
         exit_option = input('press x to exit')
+    else:
+        print('add a valid operator')
+
 
