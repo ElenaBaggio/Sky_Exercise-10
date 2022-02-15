@@ -15,16 +15,17 @@ pattern = os.path.join(hdir, '*')
 print(pattern)
 
 # TODO: Use the glob.glob() function to obtain the list of filenames
-print(glob.glob(hdir))
+file_names = glob.glob(pattern)
 
 # TODO: use os.path.getsize to find each file's size
-print(os.path.getsize(hdir))
+for file in file_names:
+    os.path.getsize(file)
 
 # TODO: Add a test to only display files that are not zero length
 size = 0
 
-for file in os.scandir(hdir):
-    size += os.path.getsize(file)
+for file in file_names:
+    size = os.path.getsize(file)
     if size > 0:
         print(file)
 
